@@ -1,0 +1,139 @@
+:root {
+    --color-1: rgb(24, 25, 33);
+    --color-2: #0004ff;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color-1);
+    color:white;
+    height: 100vh;
+}
+
+.text{
+    text-align: center;
+    margin:40px;
+}
+.content{
+    margin: 30px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:auto;
+    
+}
+.card{
+    background-color: black;
+    border-radius: 20px;
+    min-width: 300px;
+    margin:50px;
+    flex:1;
+}
+.card:hover{
+    box-shadow: 0 0 30px rgba(171, 219, 26, 0.646);
+    cursor:pointer;
+}
+.card-container{
+    position:relative;
+    clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+}
+img{
+    width: 100%;
+    display:block;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-container::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+
+/* .card1> */
+.card-container::after{
+    background-image: linear-gradient(135deg, #0100ec, #fb36f4);
+}
+
+.details{
+    padding:20px 10px;
+}
+.details>h3{
+    font-weight: 600;
+    font-size: 18px;
+    margin:10px 0 15px 0;
+}
+.details>p{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight:400;
+}
+
+.btn {
+    border: none;
+    padding: 0.8em 2.5em;
+    outline: none;
+    color: white;
+    font-style: 1.2em;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    background: none;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+  }
+  
+  .btn:before,
+  .btn:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10em;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 105%;
+    height: 105%;
+    content: "";
+    z-index: -2;
+    background-size: 400% 400%;
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+  }
+  
+  .btn:before {
+    -webkit-filter: blur(7px);
+    filter: blur(7px);
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-animation: pulse 10s infinite ease;
+    animation: pulse 10s infinite ease;
+  }
+  
+  .btn:after {
+    -webkit-filter: blur(0.3px);
+    filter: blur(0.3px);
+  }
+  
+  .btn:hover:before {
+    width: 115%;
+    height: 115%;
+  }
